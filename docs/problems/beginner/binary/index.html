@@ -1,0 +1,305 @@
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Binary Numbers #  In this chapter we are going to implement methods that help us work with binary numbers. First we are going to read binary numbers as strings from STD input stream, and then we are going to validate these strings to make sure that the input is actually a binary number. After that we will be able to do more fun stuff, such as converting a binary number to a decimal and vice versa, and more.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Binary Numbers">
+<meta property="og:description" content="Binary Numbers #  In this chapter we are going to implement methods that help us work with binary numbers. First we are going to read binary numbers as strings from STD input stream, and then we are going to validate these strings to make sure that the input is actually a binary number. After that we will be able to do more fun stuff, such as converting a binary number to a decimal and vice versa, and more.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/docs/problems/beginner/binary/"><meta property="article:section" content="docs">
+<meta property="article:modified_time" content="2021-10-18T10:13:29+02:00">
+<title>Binary Numbers | Computer Science 101</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.b03590876e3ae3f37ac1e76f0cfb60f0f9331a1a59c0eba6cb987fd7de9a3307.css>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.35ba96d9a7fe408bfd9b382f5a74aaa6a82a60f7a2b0e283b352f9893e6523c4.js></script>
+<script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><span>Computer Science 101</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul class=book-languages>
+<li>
+<input type=checkbox id=languages class=toggle>
+<label for=languages class="flex justify-between">
+<a role=button class="flex align-center">
+<img src=/svg/translate.svg class=book-icon alt=Languages>
+English
+</a>
+</label>
+<ul>
+<li>
+<a href=/rs/>
+Serbian
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class=book-section-flat>
+<a href=/docs/welcome/>Welcome</a>
+<ul>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=/docs/math/>Math</a>
+<ul>
+<li>
+<input type=checkbox id=section-0daac8eddd6dff14c7f98da4fd970a52 class=toggle>
+<label for=section-0daac8eddd6dff14c7f98da4fd970a52 class="flex justify-between">
+<a href=/docs/math/algebra/>Algebra</a>
+</label>
+<ul>
+<li>
+<a href=/docs/math/algebra/logic/>Logic</a>
+</li>
+<li>
+<a href=/docs/math/algebra/functions/>Functions</a>
+</li>
+<li>
+<a href=/docs/math/algebra/relations/>Relations</a>
+</li>
+<li>
+<a href=/docs/math/algebra/numbers/>Numbers</a>
+</li>
+<li>
+<a href=/docs/math/algebra/binary/>Binary Number System</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-48fc1fd0197f401f8810fabeb0c69a5e class=toggle>
+<label for=section-48fc1fd0197f401f8810fabeb0c69a5e class="flex justify-between">
+<a href=/docs/math/geometry/>Geometry</a>
+</label>
+<ul>
+</ul>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=/docs/dbs/>Relational Databases</a>
+<ul>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=/docs/programming/>Programming</a>
+<ul>
+<li>
+<input type=checkbox id=section-6270aed9646b23594e2ceab4bac64eb0 class=toggle>
+<label for=section-6270aed9646b23594e2ceab4bac64eb0 class="flex justify-between">
+<a href=/docs/programming/setup/>Setup</a>
+</label>
+<ul>
+<li>
+<a href=/docs/programming/setup/dotnet/>[C#] Linux, MacOS</a>
+</li>
+<li>
+<a href=/docs/programming/setup/vs/>[C#] Visual Studio</a>
+</li>
+<li>
+<a href=/docs/programming/setup/cpp/>[C++] Linux, MacOS</a>
+</li>
+<li>
+<a href=/docs/programming/setup/vscpp/>[C++] Visual Studio</a>
+</li>
+</ul>
+</li>
+<li>
+<input type=checkbox id=section-d00a41ffbefc4a57db3ca1aee0f097f8 class=toggle>
+<label for=section-d00a41ffbefc4a57db3ca1aee0f097f8 class="flex justify-between">
+<a href=/docs/programming/mem_ptr/>Pointers</a>
+</label>
+<ul>
+<li>
+<a href=/docs/programming/mem_ptr/refcsharp/>C# References</a>
+</li>
+<li>
+<a href=/docs/programming/mem_ptr/pointerscpp/>C++ Pointers</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=/docs/problems/>Programming Practice</a>
+<ul>
+<li>
+<span>Beginner</span>
+<ul>
+<li>
+<a href=/docs/problems/beginner/p0/>Practice 0</a>
+</li>
+<li>
+<a href=/docs/problems/beginner/arrays/>Arrays</a>
+</li>
+<li>
+<a href=/docs/problems/beginner/binary/ class=active>Binary Numbers</a>
+</li>
+</ul>
+</li>
+<li>
+<span>OOP</span>
+<ul>
+<li>
+<a href=/docs/problems/oop/binary/>Binary Numbers</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=/posts/>
+Blog
+</a>
+</li>
+<li>
+<a href=https://github.com/alex-shpak/hugo-book target=_blank rel=noopener>
+Github
+</a>
+</li>
+<li>
+<a href=https://themes.gohugo.io/hugo-book/ target=_blank rel=noopener>
+Hugo Themes
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Binary Numbers</strong>
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css integrity=sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET crossorigin=anonymous>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js integrity=sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js integrity=sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl crossorigin=anonymous onload=renderMathInElement(document.body)></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#binary-numbers>Binary Numbers</a>
+<ul>
+<li>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href=#tasks>Tasks</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=binary-numbers>
+Binary Numbers
+<a class=anchor href=#binary-numbers>#</a>
+</h1>
+<p>In this chapter we are going to implement methods that help us work with binary numbers. First we are going to read binary numbers as strings from STD input stream, and then we are going to validate these strings to make sure that the input is actually a binary number. After that we will be able to do more fun stuff, such as converting a binary number to a decimal and vice versa, and more.</p>
+<hr>
+<h4 id=required-knowledge>
+Required knowledge
+<a class=anchor href=#required-knowledge>#</a>
+</h4>
+<p>In order to be able to complete this practice we will assume that you are familiar with core programing concepts
+<a href=/>variables</a>,
+<a href=/>std in / out</a>,
+<a href=/>data types</a>,
+<a href=/>data types conversion</a>,
+<a href=/>flow-control</a>,
+<a href=/>loops</a>,
+<a href=/>arrays</a>,
+<a href=/>static methods</a> and that you have acquired at least very basic algorithmic thinking and problem solving mindset. For this particular practice we will also assume that you have read the corresponding theory
+<a href=/>Number</a> and
+<a href=/>Binary Number System</a>.</p>
+<hr>
+<p>The problems that we are going to solve here will serve as a starting point for later more complex OOP implementation of a library that will allow us to work with binary numbers. More complex practice regarding binary numbers can be found
+<a href=/docs/problems/oop/binary/>here</a>.</p>
+<h2 id=tasks>
+Tasks
+<a class=anchor href=#tasks>#</a>
+</h2>
+<p><strong>[1]</strong> Write a static method called <code>IsValidBinary</code> that takes an argument of type <code>string</code> and verifies that the given string is actually a valid representation of a binary number. Method returns either <code>true</code> or <code>false</code>. Examples:</p>
+<pre tabindex=0><code>1010 -&gt; true
+1111 -&gt; true
+1121 -&gt; false
+11b0 -&gt; false
+0000 -&gt; true
+</code></pre><p><strong>[2]</strong> Write a static method called <code>ParseBinary</code> that takes an argument of type <code>string</code> and converts the gien binary number into a decimal number. Make sure that the given argument is actually a binary number, in case it isn&rsquo;t, method should return <code>-1</code>. Examples:</p>
+<pre tabindex=0><code>0000 -&gt; 0
+0001 -&gt; 1
+0010 -&gt; 2
+0011 -&gt; 3
+0100 -&gt; 4
+1000 -&gt; 8
+0012 -&gt; -1
+00b0 -&gt; -1
+</code></pre></article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+<div><a class="flex align-center" href=https://github.com/rtojagic/rtojagic.github.io.git/commit/1af4d8ce3140527c5af23a05c3e2d36a5525d985 title="Last modified by Rastko Tojagic | October 18, 2021" target=_blank rel=noopener>
+<img src=/svg/calendar.svg class=book-icon alt=Calendar>
+<span>October 18, 2021</span>
+</a>
+</div>
+<div>
+<a class="flex align-center" href=https://github.com/rtojagic/rtojagic.github.io.git/edit/main/exampleSite/content/docs/problems/beginner/binary.md target=_blank rel=noopener>
+<img src=/svg/edit.svg class=book-icon alt=Edit>
+<span>Edit this page</span>
+</a>
+</div>
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#binary-numbers>Binary Numbers</a>
+<ul>
+<li>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href=#tasks>Tasks</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>
