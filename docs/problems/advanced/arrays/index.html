@@ -10,13 +10,13 @@ In this practice, we are going to assume that you are familiar with some basics 
 In this practice, we are going to assume that you are familiar with some basics of functional programming, as our approach to solving the problems given here will be functional-oriented. This means that do NOT want to modify the given inputs in any way, and always instead return the modified input from the function.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="/docs/problems/advanced/arrays/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-10-20T19:31:22+02:00">
+<meta property="article:modified_time" content="2021-10-21T13:39:33+02:00">
 <title>Arrays | Computer Science 101</title>
 <link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.b03590876e3ae3f37ac1e76f0cfb60f0f9331a1a59c0eba6cb987fd7de9a3307.css>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.0ef6b730531023ad6f6632886ece8e8b0d4237cf6510aa91827ec8c061dbad59.js></script>
+<script defer src=/en.search.min.eabdfb1306eba4c65c950d518ec621b54707810fd23001a06681389187df6e7c.js></script>
 <script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js></script>
 <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css integrity=sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET crossorigin=anonymous>
 <script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js integrity=sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb crossorigin=anonymous></script>
@@ -249,18 +249,47 @@ Arrays
 </code></pre><p><strong>[1.1]</strong> Write a static method called <code>TakeLast</code> that returns the last element of the array.</p>
 <pre tabindex=0><code>[ 13, 5, 6, 12, 5 ] -&gt; 5
 </code></pre><p><strong>Now let us make things more complex.</strong></p>
-<p><strong>[1.2]</strong> Write a static method called <code>TakeFirstN</code> that takes an array and an integer <code>n</code> and returns the array with first <code>n</code> elements. Make sure to test against edge cases (they will be written as examples below).</p>
+<p><strong>[1.2]</strong> Write a static method called <code>TakeFirstN</code> that takes an array and an integer <code>n</code> and returns the array with first <code>n</code> elements of the original array. Make sure to test against edge cases (they will be written as examples below).</p>
 <pre tabindex=0><code>([], 2) -&gt; []
 ([2, 3, 6], 0) -&gt; []
 ([1, 2], 5) -&gt; [1, 2]
-([1, 2, 3], -1) -&gt; ERR: n cannot be negative
+([1, 2, 3], -1) -&gt; [] // ERR: n cannot be negative
 ([13, 2, 6, 14, 15], 3) -&gt; [13, 2, 6]
+</code></pre><p><span style=color:red><strong>[1.3]</strong></span> Write a static method called <code>TakeLastN</code> that takes an array and an integer <code>n</code> and returns the array with last <code>n</code> elements of the original array. Make sure to test against edge cases (they will be written as examples below).</p>
+<pre tabindex=0><code>([], 2) -&gt; []
+([2, 3, 6], 0) -&gt; []
+([1, 2], 5) -&gt; [1, 2]
+([1, 2, 3], -1) -&gt; [] // ERR: n cannot be negative
+([13, 2, 6, 14, 15], 3) -&gt; [6, 14, 15]
+</code></pre><p><strong>[1.4]</strong> Write a static method called <code>TakeEverySecond</code> that takes an array of integers and returns new array that contains every second element of the original array, starting with index 0 as first element.</p>
+<pre tabindex=0><code>[] -&gt; []
+[1] -&gt; [1]
+[1, 2] -&gt; [1]
+[1, 2, 3, 4] -&gt; [1, 3]
+[1, 2, 3, 4, 5] -&gt; [1, 3, 5]
+</code></pre><p><span style=color:red><strong>[1.5]</strong></span> Write a static method called <code>TakeEveryNth</code> that takes an array of integers and an integer <code>n</code> and returns new array that contains every n-th element of the original array, starting with index 0 as first element.</p>
+<pre tabindex=0><code>([], 2) -&gt; []
+([1], 2) -&gt; [1]
+([1, 2], 3) -&gt; [1]
+([1, 2, 3, 4], 3) -&gt; [1, 4]
+([1, 2, 3, 4, 5, 6, 7, 8] , 3) -&gt; [1, 4, 7]
+</code></pre><p>At this point we are going to start writing some functions that are often used in functional paradigm. Many of the todays languages are functional or have a functional oriented extension. In web development we work with collections of data a lot, and we often use these functions, without maybe realising that this is a completely different paradigm. In order to use these well, we need to understand how they work first. In this practice we will stick with the more simpler approach and enter the functional world step by step. In the
+<a href=/>expert</a> arrays practice, we will implement this using higher-order functions, but for now we will work with specific cases and you will have to copy the same code all over again. This should also make you question this approach, and make you wonder if there is a way to reuse some parts of the code. When you are ready, proceed to the
+<a href=/>expert</a> practice to see how this is really done.</p>
+<p><strong>[2.1]</strong> In the previously defined <code>CSArrays</code> class, write a static method called <code>FilterPositive</code> that takes an array of integers and returns new array that consists of all positive integers of the original array.</p>
+<pre tabindex=0><code>[1, 2, -4, 5, -1, -16, 2] -&gt; [1, 2, 5, 2]
+</code></pre><p><strong>[2.2]</strong> In the previously defined <code>CSArrays</code> class, write a static method called <code>FilterEven</code> that takes an array of integers and returns new array that consists of all even integers of the original array.</p>
+<pre tabindex=0><code>[1, 2, -4, 5, -1, -16, 2] -&gt; [2, -4, -16, 2]
+</code></pre><p>Now, we could make these a bit more general, so that we don&rsquo;t have a write a new function for every single usecase.</p>
+<p><strong>[2.3]</strong> In 2.1 you wrote a method <code>FilterPositive</code>, now write a new static method <code>FilterBySign</code> that takes an array of ints and an integer that can be 1 or -1. If it is 1 filter all positive elements otherwise all negatives.</p>
+<pre tabindex=0><code>([1, 2, -3, 12, -1, 3], 1) -&gt; [1, 2, 3]
+([1, 2, -3, 12, -1, 3], -1) -&gt; [-3, -1]
 </code></pre></article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/rtojagic/rtojagic.github.io.git/commit/739cd719cfb2258dc8ce73199b33c3d714904d7b title="Last modified by Rastko Tojagic | October 20, 2021" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/rtojagic/rtojagic.github.io.git/commit/24d1b5492e8ae32c7e5438a719d8f496e7d310ad title="Last modified by Rastko Tojagic | October 21, 2021" target=_blank rel=noopener>
 <img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>October 20, 2021</span>
+<span>October 21, 2021</span>
 </a>
 </div>
 <div>
