@@ -10,13 +10,13 @@ We will start simple, and slowly work our way to more complex stuff. Once you ar
 We will start simple, and slowly work our way to more complex stuff. Once you are ready you can checkout more advanced practice here.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="/docs/problems/beginner/arrays/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-10-18T10:13:29+02:00">
+<meta property="article:modified_time" content="2021-10-27T18:38:28+02:00">
 <title>Arrays | Computer Science 101</title>
 <link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.b03590876e3ae3f37ac1e76f0cfb60f0f9331a1a59c0eba6cb987fd7de9a3307.css>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.eabdfb1306eba4c65c950d518ec621b54707810fd23001a06681389187df6e7c.js></script>
+<script defer src=/en.search.min.ddb4d01747e47c4d0307ea7067af45962590ede592a9e9e880de3e3fe5be5d76.js></script>
 <script defer src=/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js></script>
 <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css integrity=sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET crossorigin=anonymous>
 <script defer src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js integrity=sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb crossorigin=anonymous></script>
@@ -318,6 +318,21 @@ Tasks
 <pre tabindex=0><code>1 3 2
 </code></pre></details>
 <details>
+<summary>[1.1] Searching the arrays</summary>
+<p><strong>[1.1.1]</strong> Write a static method <code>Exists</code> that takes an array of integers and an element <code>e</code> and searches for the element in the array. If the element exists it should return <code>true</code>, otherwise <code>false</code>.</p>
+<pre tabindex=0><code>([1, 2, 3, 4, 5], 2) -&gt; true
+([1, 2, 3, 4, 5], 1) -&gt; true
+([1, 2, 3, 4, 5], 7) -&gt; false
+([1, 2, 3, 4, 5], 4) -&gt; true
+
+</code></pre><p><strong>[1.1.2]</strong> Write a static method <code>Contains</code> that takes an array of integers and an element <code>e</code> and searches for the element in the array. If the element is found it should return its position, otherwise <code>-1</code>.</p>
+<pre tabindex=0><code>([1, 2, 3, 4, 5], 2) -&gt; 1
+([1, 2, 3, 4, 5], 1) -&gt; 0
+([1, 2, 3, 4, 5], 7) -&gt; -1
+([1, 2, 3, 4, 5], 4) -&gt; 3
+
+</code></pre></details>
+<details>
 <summary>[2] Modifying the arrays</summary>
 <p><strong>[2.1]</strong> Write a static method <code>AddOneToEach</code> that takes an array of integers and adds <code>1</code> to every element. Print the array before and after to confirm that your method worked correctly. For the array <code>[1, 2, 3]</code> it should print <code>[2, 3, 4]</code>.</p>
 <p><strong>[2.2]</strong> Write a static method <code>MultEachBy</code> that takes an array of integers and an integer <code>x</code> and multiplies each element of the array by <code>x</code>. Method should print the multiplied array. Example</p>
@@ -385,9 +400,9 @@ $$</p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/rtojagic/rtojagic.github.io.git/commit/1af4d8ce3140527c5af23a05c3e2d36a5525d985 title="Last modified by Rastko Tojagic | October 18, 2021" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/rtojagic/rtojagic.github.io.git/commit/4c227ff4420bd4090061cdd7565813812b428c76 title="Last modified by Rastko Tojagic | October 27, 2021" target=_blank rel=noopener>
 <img src=/svg/calendar.svg class=book-icon alt=Calendar>
-<span>October 18, 2021</span>
+<span>October 27, 2021</span>
 </a>
 </div>
 <div>
