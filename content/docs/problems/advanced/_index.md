@@ -1,4 +1,4 @@
 ---
 weight: 2
-title: "Advanced"
+title: "| Advanced"
 ---

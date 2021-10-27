@@ -1,7 +1,7 @@
 ---
-weight: 6
+weight: 7
 bookFlatSection: true
-title: "Practice: Algorithms & Data Structures"
+title: "Practice: Object-Oriented Programming (OOP)"
 ---
 
 # Introduction
