@@ -137,6 +137,31 @@ For the array `[1, 2, 3]` the method prints
 </details>
 
 <details>
+<summary>[1.1] Searching the arrays</summary>
+
+**[1.1.1]** Write a static method `Exists` that takes an array of integers and an element `e` and searches for the element in the array. If the element exists it should return `true`, otherwise `false`.
+
+```
+([1, 2, 3, 4, 5], 2) -> true
+([1, 2, 3, 4, 5], 1) -> true
+([1, 2, 3, 4, 5], 7) -> false
+([1, 2, 3, 4, 5], 4) -> true
+
+```
+
+**[1.1.2]** Write a static method `Contains` that takes an array of integers and an element `e` and searches for the element in the array. If the element is found it should return its position, otherwise `-1`.
+
+```
+([1, 2, 3, 4, 5], 2) -> 1
+([1, 2, 3, 4, 5], 1) -> 0
+([1, 2, 3, 4, 5], 7) -> -1
+([1, 2, 3, 4, 5], 4) -> 3
+
+```
+
+</details>
+
+<details>
 <summary>[2] Modifying the arrays</summary>
 
 **[2.1]** Write a static method `AddOneToEach` that takes an array of integers and adds `1` to every element. Print the array before and after to confirm that your method worked correctly. For the array `[1, 2, 3]` it should print `[2, 3, 4]`.

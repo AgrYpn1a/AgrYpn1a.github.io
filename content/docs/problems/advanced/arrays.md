@@ -15,7 +15,14 @@ So let's begin by jumping right into it, and write the first useful method that 
 
 > Note: we will assume that our methods work with integers only for the sake of simplicity.
 
-**[1.0]** Write a new class called `CSArrays` and in it write a static method called `Copy` that takes an array and creates a new one that is an exact copy of the given array. Method should return the newly created array copy.
+**[1.0a]** Write a new class called `CSArrays` and in it write a static method called `Copy` that takes an array and creates a new one that is an exact copy of the given array. Method should return the newly created array copy.
+
+**[1.0b]** Now let's extend this with another utility like method taht is generally useful. Write a static method `Reverse` that takes an array of integers and returns new array that is a reverse of the original.
+
+```
+[1, 2, 3] -> [3, 2, 1]
+[1] -> [1]
+```
 
 ---
 
@@ -31,7 +38,7 @@ So let's begin by jumping right into it, and write the first useful method that 
 [ 13, 5, 6, 12, 5 ] -> 13
 ```
 
-**[1.1]** Write a static method called `TakeLast` that returns the last element of the array.
+**[1.2]** Write a static method called `TakeLast` that returns the last element of the array.
 
 ```
 [ 13, 5, 6, 12, 5 ] -> 5
@@ -39,7 +46,7 @@ So let's begin by jumping right into it, and write the first useful method that 
 
 **Now let us make things more complex.**
 
-**[1.2]** Write a static method called `TakeFirstN` that takes an array and an integer `n` and returns the array with first `n` elements of the original array. Make sure to test against edge cases (they will be written as examples below).
+**[1.3]** Write a static method called `TakeFirstN` that takes an array and an integer `n` and returns the array with first `n` elements of the original array. Make sure to test against edge cases (they will be written as examples below).
 
 ```
 ([], 2) -> []
@@ -49,7 +56,7 @@ So let's begin by jumping right into it, and write the first useful method that 
 ([13, 2, 6, 14, 15], 3) -> [13, 2, 6]
 ```
 
-<span style="color:red">**[1.3]**</span> Write a static method called `TakeLastN` that takes an array and an integer `n` and returns the array with last `n` elements of the original array. Make sure to test against edge cases (they will be written as examples below).
+<span style="color:red">**[1.4]**</span> Write a static method called `TakeLastN` that takes an array and an integer `n` and returns the array with last `n` elements of the original array. Make sure to test against edge cases (they will be written as examples below).
 
 ```
 ([], 2) -> []
@@ -59,7 +66,7 @@ So let's begin by jumping right into it, and write the first useful method that 
 ([13, 2, 6, 14, 15], 3) -> [6, 14, 15]
 ```
 
-**[1.4]** Write a static method called `TakeEverySecond` that takes an array of integers and returns new array that contains every second element of the original array, starting with index 0 as first element.
+**[1.5]** Write a static method called `TakeEverySecond` that takes an array of integers and returns new array that contains every second element of the original array, starting with index 0 as first element.
 
 ```
 [] -> []
